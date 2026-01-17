@@ -7,7 +7,7 @@
 
 ---
 
-## 📖 Overview
+## Overview
 This repository contains our final project for the Computer Networking course. We focused on two core areas: **Protocol Encapsulation** and **Real-time Communication** using Python Sockets.
 
 ---
