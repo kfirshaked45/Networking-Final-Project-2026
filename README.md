@@ -1,85 +1,47 @@
-🌐 Networking Final Project - 2026
-Authors: Kfir Shaked, Noam Bitton, Eyal Raveh
-This repository contains the final project for the Computer Networking course. The project is divided into two main parts: Encapsulation & Packet Analysis and a Multi-user Chat System.
+# 🌐 Networking Final Project - 2026
+### Authors: Kfir Shaked • Noam Bitton • Eyal Raveh
 
-📋 Project Overview
-Part 1: Encapsulation & Packet Capture
-In this section, we simulated a standard HTTP communication (GET/POST) between a client and a server.
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
+![TCP/IP](https://img.shields.io/badge/Protocol-TCP%2FIP-orange?style=for-the-badge)
+![Wireshark](https://img.shields.io/badge/Analysis-Wireshark-blue?style=for-the-badge)
 
-Application Layer: Defined custom HTTP messages in a .csv file.
+---
 
-Encapsulation Process: Developed a Python script to wrap application data into TCP segments and IP packets.
+## 📖 Overview
+This repository contains our final project for the Computer Networking course. We focused on two core areas: **Protocol Encapsulation** and **Real-time Communication** using Python Sockets.
 
-Analysis: Captured the local traffic using Wireshark to analyze the headers and verify the data flow through the network layers.
+---
 
-Part 2: Multi-threaded Chat System
-A robust, real-time chat application based on the TCP protocol, supporting multiple concurrent users.
+## 🔬 Part 1: Encapsulation & Packet Analysis
+In this section, we simulated how data travels from the Application layer down to the Network layer.
 
-Multi-threading: Handles 5+ clients simultaneously without blocking.
+* **Application Data:** Custom HTTP GET/POST requests stored in `group0_http_input.csv`.
+* **Encapsulation Logic:** A Python engine that wraps raw data into valid TCP segments and IP packets.
+* **Verification:** Full traffic analysis using Wireshark to confirm header integrity.
 
-Chat Rooms: Users can join specific rooms using the /join command.
 
-Private Messaging: Supports "Whispering" (/w [name] [message]) to ensure private communication that other users cannot see.
 
-Error Handling: Built-in protection against unexpected disconnections and duplicate usernames.
+---
 
-🛠 Tech Stack
-Language: Python 3.x
+## 💬 Part 2: Multi-threaded Chat System
+A robust chat server designed to handle multiple concurrent clients with low latency.
 
-Libraries: socket, threading, sys
+### Core Features:
+* **Multi-threading:** Supports 5+ simultaneous connections using the `threading` library.
+* **Private Messaging (Whisper):** Send secure messages using `/w [username] [msg]`.
+* **Room Management:** Dynamic switching between channels with `/join [RoomName]`.
+* **Safety:** Built-in protection against duplicate usernames and sudden client disconnections.
 
-Tools: Wireshark (Traffic Analysis)
+---
 
-📂 Project Structure
-Plaintext
-
+## 📂 Project Structure
+```text
 ├── Part1_Encapsulation/
-│ ├── server_http.py # HTTP Server simulation
-│ ├── client_http.py # HTTP Client (reads from CSV)
-│ ├── group0_http_input.csv # Application layer data
-│ └── report_capture.pcap # Captured traffic file
+│   ├── server_http.py          # HTTP Server simulation
+│   ├── client_http.py          # HTTP Client (CSV Reader)
+│   ├── group0_http_input.csv   # Mock Application Data
+│   └── report_capture.pcap     # Wireshark Capture
 ├── Part2_Chat_System/
-│ ├── chat_server.py # Multi-threaded server
-│ └── chat_client.py # Chat client interface
-├── Docs/
-│ └── Final_Report.pdf # Detailed project documentation
+│   ├── chat_server.py          # Multi-threaded TCP Server
+│   └── chat_client.py          # Terminal-based Client
 └── README.md
-🚀 Getting Started
-Running the HTTP Simulation (Part 1)
-Start the server:
-
-Bash
-
-python Part1_Encapsulation/server_http.py
-Run the client to send messages from the CSV:
-
-Bash
-
-python Part1_Encapsulation/client_http.py
-Running the Chat System (Part 2)
-Start the Server:
-
-Bash
-
-python Part2_Chat_System/chat_server.py
-Connect Clients: Open multiple terminals (up to 5) and run:
-
-Bash
-
-python Part2_Chat_System/chat_client.py
-In-Chat Commands:
-
-/join [RoomName] - Switch chat rooms.
-
-/w [Username] [Message] - Send a private message.
-
-/exit - Disconnect safely.
-
-🔍 Wireshark Analysis
-During the project, we analyzed the following:
-
-TCP Three-Way Handshake: (SYN -> SYN-ACK -> ACK).
-
-Encapsulation: Verifying the data payload is correctly nested within the TCP and IP headers.
-
-Protocol Verification: Ensuring HTTP methods and custom chat commands are transmitted correctly as cleartext over the socket.
