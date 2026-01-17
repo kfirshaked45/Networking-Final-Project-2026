@@ -12,7 +12,7 @@ This repository contains our final project for the Computer Networking course. W
 
 ---
 
-## 🔬 Part 1: Encapsulation & Packet Analysis
+## Part 1: Encapsulation & Packet Analysis
 In this section, we simulated how data travels from the Application layer down to the Network layer.
 
 * **Application Data:** Custom HTTP GET/POST requests stored in `group0_http_input.csv`.
@@ -23,7 +23,7 @@ In this section, we simulated how data travels from the Application layer down t
 
 ---
 
-## 💬 Part 2: Multi-threaded Chat System
+## Part 2: Multi-threaded Chat System
 A robust chat server designed to handle multiple concurrent clients with low latency.
 
 ### Core Features:
