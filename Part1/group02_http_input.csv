@@ -1,0 +1,5 @@
+msg_id,src_app,dst_app,protocol,message,timestamp
+1,client_browser,web_server,HTTP,"GET /job/queue HTTP/1.1\r\nHost: 127.0.0.1:8080\r\nUser-Agent: RestSharp/113.0.0.0\r\nAccept: application/json\r\n\r\n",0.015
+2,web_server,client_browser,HTTP,"HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nContent-Length: 45\r\n\r\n{""status"":""success"",""queue_size"":5}",0.022
+3,client_browser,web_server,HTTP,"POST /job/submit HTTP/1.1\r\nHost: 127.0.0.1:8080\r\nContent-Length: 18\r\n\r\njob_id=101&priority=high",0.050
+4,web_server,client_browser,HTTP,"HTTP/1.1 302 Found\r\nLocation: /job/status/101\r\nContent-Length: 0\r\n\r\n",0.055

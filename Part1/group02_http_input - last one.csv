@@ -1,0 +1,5 @@
+msg_id,app_protocol,src_app,dst_app,message,timestamp
+1,HTTP,client_browser,web_server,GET /index.html HTTP/1.1\r\nHost: server.com\r\nConnection: keep-alive\r\n\r\n,0.015
+2,HTTP,web_server,client_browser,HTTP/1.1 200 OK\r\nContent-Type: text/html\r\nContent-Length: 50\r\n\r\n<html><body>PAGE DATA</body></html>,0.022
+3,HTTP,client_browser,web_server,POST /submit_form HTTP/1.1\r\nHost: server.com\r\nContent-Length: 20\r\n\r\nname=kfir&id=123,0.050
+4,HTTP,web_server,client_browser,HTTP/1.1 302 Found\r\nLocation: /new_page.html\r\nContent-Length: 0\r\n\r\n,0.055
